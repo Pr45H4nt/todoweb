@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'addlist' %} "><button>Add Catagory</button></a>
+{% for i in item %}
+
+<h1>{{i}}</h1> <a href="{% url 'config' slug=i.slug %}">Configure</a> <br>
+{% for k in i.tasks_set.all %}
+        {{k.name}}
+        {{k.description}}
+{% endfor %}
+{% endfor %} 
+
+{% endblock content %}
+    
