@@ -23,5 +23,6 @@ urlpatterns = [
     path('config/<slug>/', views.ConfigureView, name = "config"),
     path('delete/<slug>/' , views.deletelist_or_task, name = "delete"),
     path('edititem/<slug>/' , views.edit_item, name = 'edititem'),
-    path('addlist', views.addlist, name = "addlist")
+    path('addlist', views.addlist, name = "addlist"),
+    path('login/', views.loginuser, name = 'login')
 ]
