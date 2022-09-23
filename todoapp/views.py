@@ -42,6 +42,7 @@ def edit_item(request,slug):
             value = request.POST.get('editeditem')
             obj.name = value
             obj.save()
+            return redirect("home")
 
     except:
         obj = ListModel.objects.get(slug=slug)
@@ -49,6 +50,7 @@ def edit_item(request,slug):
             value = request.POST.get('editeditem')
             obj.title = value
             obj.save()
+            return redirect("home")
 
     data = {
         'item' : obj
@@ -63,4 +65,5 @@ def addlist(request):
         f = ListForm(request.POST)
         if f.is_valid():
             f.save()
+            return redirect("home")
     return render(request, "addlist.html", {'form' : f})
